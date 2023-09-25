@@ -16,25 +16,25 @@ def handle_events():
             running = False
         elif event.type == SDL_KEYDOWN:
             if event.key == SDLK_RIGHT:
-                dx += 3
+                dx += 5
             elif event.key == SDLK_LEFT:
-                dx -= 3
+                dx -= 5
             elif event.key == SDLK_UP:
-                dy += 3
+                dy += 5
             elif event.key == SDLK_DOWN:
-                dy -= 3
+                dy -= 5
             elif event.key == SDLK_ESCAPE:
                 running = False
 
         elif event.type == SDL_KEYUP:
             if event.key == SDLK_RIGHT:
-                dx -= 3
+                dx -= 5
             elif event.key == SDLK_LEFT:
-                dx += 3
+                dx += 5
             elif event.key == SDLK_UP:
-                dy -= 3
+                dy -= 5
             elif event.key == SDLK_DOWN:
-                dy += 3
+                dy += 5
 
 running = True
 frame = 0
@@ -46,7 +46,7 @@ while running:
     clear_canvas()
 
     tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
-    character.clip_draw(frame * 100, 100 * 1, 80, 130, x, y)
+    character.clip_draw(frame * 100, 10, 100, 130, x, y)
 
     update_canvas()
     handle_events()
@@ -55,6 +55,6 @@ while running:
     y += dy
 
     frame = (frame + 1) % 8
-    delay(0.1)
+    delay(0.085)
 
 close_canvas()
