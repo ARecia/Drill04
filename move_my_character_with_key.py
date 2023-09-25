@@ -51,6 +51,15 @@ while running:
     update_canvas()
     handle_events()
 
+    if x < 0:
+        x = 0
+    elif x > TUK_WIDTH:
+        x = TUK_WIDTH
+    if y < 0:
+        y = 0
+    elif y > TUK_HEIGHT:
+        y = TUK_HEIGHT
+
     x += dx
     y += dy
 
